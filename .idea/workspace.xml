@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73a9de85-1944-429f-ac1b-a9d6be8c206d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/pickerView/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/pickerView/data/img1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/pickerView/data/img2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/pickerView/data/img3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/pickerView/data/img4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/pickerView/data/pickerView2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/pickerView/demo/pickerView.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/pickerView/gulpfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/pickerView/src/pickerView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/pickerView/src/style/pickerView.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.postcssrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/pickerView/demo/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/pickerView/src/style/test.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/pickerView/demo/pickerView.html" beforeDir="false" afterPath="$PROJECT_DIR$/packages/pickerView/demo/pickerView.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/pickerView/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/pickerView/gulpfile.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,14 +21,33 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/packages/pickerView/gulpfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="65">
+              <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>@babel/core'</find>
+      <find>showText</find>
+      <find>PickerView</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,6 +56,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/packages/pickerView/src/style/test.scss" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/packages/pickerView/demo/test.js" />
+        <option value="$PROJECT_DIR$/lib/pickerView.js" />
+        <option value="$PROJECT_DIR$/packages/pickerView/demo/pickerView.html" />
+        <option value="$PROJECT_DIR$/lib/pickerView.min.js" />
+        <option value="$PROJECT_DIR$/packages/pickerView/gulpfile.js" />
       </list>
     </option>
   </component>
@@ -52,12 +72,17 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
   <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="381" />
-    <option name="y" value="192" />
+    <option name="x" value="307" />
+    <option name="y" value="118" />
     <option name="width" value="1539" />
     <option name="height" value="903" />
   </component>
@@ -73,6 +98,29 @@
               <item name="CX-UI-Plugin" type="b2602c69:ProjectViewProjectNode" />
               <item name="CX-UI-Plugin" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CX-UI-Plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CX-UI-Plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CX-UI-Plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CX-UI-Plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CX-UI-Plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CX-UI-Plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="pickerView" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CX-UI-Plugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CX-UI-Plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="pickerView" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -84,8 +132,10 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -122,15 +172,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548223873793</updated>
-      <workItem from="1548223875131" duration="298000" />
+      <workItem from="1548223875131" duration="5626000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298000" />
+    <option name="totallyTimeSpent" value="5626000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="381" y="192" width="1539" height="903" extended-state="0" />
+    <frame x="307" y="118" width="1539" height="903" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24967062" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -139,7 +190,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.46526054" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -164,9 +215,6 @@
     <entry file="file://$PROJECT_DIR$/packages/pickerView/data/img1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/pickerView/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1493" />
@@ -177,12 +225,6 @@
         <state relative-caret-position="-873" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/pickerView/demo/pickerView.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/pickerView/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -192,6 +234,100 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/pickerView/src/style/test.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.postcssrc.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/test.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jquery/dist/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding>
+            <element signature="e#386#1016#0" />
+            <element signature="e#1172#271747#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/pickerView/demo/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pickerView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#ಠ_ಠ737#0;n#ಠ_ಠ737#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ಠ_ಠ737#1;n#ಠ_ಠ737#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ಠ_ಠ737#2;n#ಠ_ಠ737#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/pickerView/src/pickerView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pickerView.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-987">
+          <caret line="48" column="38" lean-forward="true" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="34" column="10" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/pickerView/demo/pickerView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="4526" column="6" selection-start-line="4526" selection-start-column="6" selection-end-line="4526" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#565#100016#0" />
+            <element signature="e#100023#100038#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/pickerView/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
