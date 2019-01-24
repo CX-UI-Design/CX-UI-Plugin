@@ -5,14 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../src/style/pickerView.css">
-    <title>选择器</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../lib/pickerView.min.css">
+    <title>移动端底部选择器视图控件</title>
 </head>
 
 <body>
-<button style="font-size:50px;" id="btn">按钮</button>
+<h2>移动端底部选择器视图控件</h2>
+<div class="input-group">
+    <input type="text" class="form-control" id="showValue" placeholder="请选择" ria-describedby="basic-addon2" value="">
+    <span class="input-group-addon" id="selectVal">点击选择</span>
+</div>
 <div class="showText"></div>
-<script src="../../../lib/pickerView/pickerView.min.js" charset="utf-8"></script>
+<script src="../lib/pickerView.min.js" charset="utf-8"></script>
+
 <script type="text/javascript">
     var data = {
         2012: [3, 354],
@@ -4565,7 +4571,7 @@
     //     }
     // }
     // var data = [1,2,3]
-    var btn = document.getElementById("btn");
+    var btn = document.getElementById("selectVal");
     btn.onclick = function () {
         var pickerView = new PickerView({
             bindElem: btn, // 绑定的元素
@@ -4575,7 +4581,7 @@
             rightText: '确定', // 头部右侧按钮文本 默认为“确定”
             rightFn: function (selectArr) {  // 点击头部右侧按钮的回调函数，参数为一个数组，数组对应滚轮中每项对应的值
                 console.log(selectArr, 'selectarr');
-                document.querySelector(".showText").innerText = selectArr.join("-");
+                document.getElementById("showValue").value = selectArr.join("-");
             }
         });
     }

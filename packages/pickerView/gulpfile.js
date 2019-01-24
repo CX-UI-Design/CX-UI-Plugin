@@ -11,8 +11,10 @@ var gulpSass = require('gulp-sass');
 var csso = require('gulp-csso');
 var postcss = require('gulp-postcss');
 
+const utils = require('../../build/utils.js');
+
 var _base_path = './src/';
-var _base_dist_path = '../../lib/pickerView/';
+var _base_dist_path = './lib/';
 
 
 gulp.task('js-handle', function () {
@@ -39,15 +41,16 @@ gulp.task('compile-scss', () => (
         }))
         .pipe(postcss())
         .pipe(csso())
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(_base_dist_path))
 ));
 
 gulp.task('watch', () => {
     gulp.watch(_base_path + '**/*.js', ['js-handle']).on('change', function (event) {
-        // console.log('File ' + event.path + ' was ' + event.type + showinfo() + '')
+        console.log('File ' + event.path + ' was ' + event.type + utils.showinfo() + '')
     });
     gulp.watch(_base_path + '**/*.scss', ['compile-scss']).on('change', function (event) {
-        // console.log('File ' + event.path + ' was ' + event.type + showinfo() + '')
+        console.log('File ' + event.path + ' was ' + event.type + utils.showinfo() + '')
     });
 });
 
