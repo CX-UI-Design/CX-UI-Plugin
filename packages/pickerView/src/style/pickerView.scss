@@ -1,3 +1,5 @@
+@import "var";
+
 @keyframes slideUp {
   0% {
     bottom: -40%;
@@ -7,34 +9,7 @@
   }
 }
 
-@-moz-keyframes slideUp {
-  0% {
-    bottom: -40%;
-  }
-  100% {
-    bottom: 0;
-  }
-}
-
-@-webkit-keyframes slideUp {
-  0% {
-    bottom: -40%;
-  }
-  100% {
-    bottom: 0;
-  }
-}
-
-@-o-keyframes slideUp {
-  0% {
-    bottom: -40%;
-  }
-  100% {
-    bottom: 0;
-  }
-}
-
-.pickerView-wrap {
+.ns-pickerView {
   position: fixed;
   left: 0;
   top: 0;
@@ -44,42 +19,39 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-size: 0;
   }
-  .pickerView-mask {
+  .ns-pickerView-mask {
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, .4);
+    background-color: $pickerView__mask;
   }
-  .pickerView-box {
-    height: 40%;
-    width: 100%;
+  .ns-pickerView-box {
     position: absolute;
     left: 0;
     bottom: 0;
-    background: #fff;
+    height: 40%;
+    width: 100%;
     padding-top: 45px;
+    background: $pickerView__border-back;
     animation: slideUp 0.3s;
-    .pickerView-box-header {
-      text-align: center;
-      height: 45px;
-      border-bottom: 1px solid #ddd;
-      width: 100%;
-      padding: 0 50px;
+    .ns-pickerView-box__header {
       position: absolute;
       left: 0;
       top: 0;
+      height: 45px;
+      width: 100%;
+      padding: 0 50px;
+      border-bottom: 1px solid $pickerView__border-color;
+      background: $pickerView__border-back;
       z-index: 10;
-      background: #fff;
+      text-align: center;
       & > div {
         line-height: 44px;
         font-size: 16px;
       }
-      .pickerView-box-header-title {
+      .ns-pickerView-box__header-title {
         text-align: center;
         height: 100%;
         width: 100%;
@@ -87,36 +59,30 @@
         white-space: nowrap;
         text-overflow: ellipsis;
       }
-      .pickerView-box-header-btn {
-        height: 100%;
-        width: 50px;
+      .ns-pickerView-box__header-btn {
         position: absolute;
         top: 0;
-        color: #108ee9;
-      }
-      .pickerView-box-header-left {
-        left: 0;
-      }
-      .pickerView-box-header-right {
-        right: 0;
+        height: 100%;
+        width: 50px;
+        color: $pickerView__btn-text-color;
+        &.left {
+          left: 0;
+        }
+        &.right {
+          right: 0;
+        }
       }
     }
-    .pickerView-box-content-wrap {
+    .ns-pickerView-box__content-wrap {
+      position: relative;
+      display: flex;
       height: 100%;
       width: 100%;
       overflow: hidden;
-      position: relative;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      .pickerView-box-content {
+      .ns-pickerView-box__content {
         position: relative;
-        -webkit-box-flex: 1;
-        -webkit-flex: 1;
-        -ms-flex: 1;
         flex: 1;
-        .pickerView-box-content-mask {
+        .content-mask {
           position: absolute;
           left: 0;
           bottom: 0;
@@ -131,25 +97,24 @@
           background-size: 100% 102px;
           background-repeat: no-repeat;
         }
-        .pickerView-box-content-indicator {
-          -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-          width: 100%;
-          height: 34px;
+        .content-indicator {
           position: absolute;
           left: 0;
           top: 102px;
+          width: 100%;
+          height: 34px;
           z-index: 3;
-          border-top: 1PX solid #ddd;
-          border-bottom: 1PX solid #ddd;
+          border-top: 1PX solid $pickerView__border-color;
+          border-bottom: 1PX solid $pickerView__border-color;
+          box-sizing: border-box;
         }
-        .pickerView-item {
-          touch-action: manipulation;
-          text-align: center;
-          font-size: 16px;
+        .content-item {
           height: 34px;
           line-height: 34px;
-          color: #000;
+          font-size: 16px;
+          color: $pickerView__item-text-color;
+          text-align: center;
+          touch-action: manipulation;
           overflow: hidden;
           white-space: nowrap;
           text-overflow: ellipsis;

@@ -9,48 +9,40 @@
     <link rel="stylesheet" href="../lib/pickerView.min.css">
     <title>移动端底部选择器视图控件</title>
 </head>
-
 <body>
+
 <h2>移动端底部选择器视图控件</h2>
 <div class="input-group">
     <input type="text" class="form-control" id="showValue" placeholder="请选择" ria-describedby="basic-addon2" value="">
     <span class="input-group-addon" id="selectVal">点击选择</span>
 </div>
+
 <div class="showText"></div>
+<script src="../../../utils/jquery.min.js" charset="utf-8"></script>
 <script src="../lib/pickerView.min.js" charset="utf-8"></script>
 
 <script type="text/javascript">
-    var data = {
-        2012: [3, 354],
-        234: [2, 35, 4]
-    }
-    var data = {
-        "产品研发部": {
-            "架构组": ["高仓雄", "大禹"],
-            "SASS": ["张少杰", "葛晓丹"],
-            "主数据": ["杨春迪", "陈亚炎"],
-            "收费易": ["xxx", "xxx"],
-        },
-        "市场部": {
-            "市场部1": ["朱少利", "罐子"],
-            "市场部2": ["大冯", "KK"],
-        },
-        "财务部": {
-            "财务1": ["刘蓉"],
-            "财务2": ["YY"],
-        },
-        "人事": {
-            "人事1": ["马云超"],
-            "人事2": ["柚子"],
-        }
-    };
+    // var data = {2012: [3, 354], 234: [2, 35, 4]};
     // var data = [1,2,3]
+
+    var optiomns = [];
+    $.ajax({
+        type: 'POST',
+        url: "./data/organization.json",
+        data: {},
+        success: function (res) {
+            console.log(res);
+            optiomns = res;
+        }
+    });
+
+
     var btn = document.getElementById("selectVal");
     btn.onclick = function () {
         var pickerView = new PickerView({
             bindElem: btn, // 绑定的元素
-            data: data, // 说明：该参数必须符合json格式 且最里层是个数组，如上面的data变量所展示的[3,4]。
-            title: "省市区联动", // 顶部标题文本 默认为“标题”
+            data: optiomns, // 说明：该参数必须符合json格式 且最里层是个数组，如上面的data变量所展示的[3,4]。
+            title: "选人控件", // 顶部标题文本 默认为“标题”
             leftText: "取消", // 头部左侧按钮文本 默认为‘取消’
             rightText: "确定", // 头部右侧按钮文本 默认为“确定”
             rightFn: function (selectArr) {  // 点击头部右侧按钮的回调函数，参数为一个数组，数组对应滚轮中每项对应的值

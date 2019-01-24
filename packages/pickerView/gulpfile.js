@@ -35,7 +35,7 @@ gulp.task('js-handle', function () {
 // compile component css
 gulp.task('compile-scss', () => (
     gulp
-        .src([path.resolve(_base_path + 'style/**/*.scss')])
+        .src([path.resolve(_base_path + 'style/**/*.scss'), '!' + path.resolve(_base_path + 'style/var.scss')])
         .pipe(gulpSass({
             paths: [path.resolve(__dirname, 'node_modules')]
         }))
