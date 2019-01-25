@@ -53,7 +53,7 @@
             if (!this.hasClass(parent, pClass)) parent = this.parents(parent, pClass);
             return parent;
         },
-        isObj: function (o) {
+        isObject: function (o) {
             return Object.prototype.toString.call(o) == "[object Object]";
         },
         isArray: function (o) {
@@ -69,6 +69,7 @@
             title: '标题',
             leftText: '取消',
             rightText: '确定',
+            pickTouchSpeed: '0.3s',
             saveFn: function (selectArr) {
 
             }
@@ -94,7 +95,7 @@
         var selectcache = this.Opt.bindElem.getAttribute("selectcache");
         this.selectcache = selectcache ? selectcache.split(",") : [];
         this.selectArr = []; // 选项对应的元素序列号 如：[0,0,0]
-
+        this.fleeIndex = null; //
         this.init();
 
     }
@@ -111,22 +112,23 @@
         getItemTpl: function (keys) {
             var item_html = "";
             for (var i = 0; i < keys.length; i++) {
-                item_html += '<div class="content-item">' + keys[i] + '</div>';
+                item_html += '<div class="content-item" style="fornt-size:' + (16 - i / 2) + 'px;">' + keys[i] + '</div>';
             }
-            ;
             return item_html;
         },
         getItemsTpl: function (keys) {
             var fieldIndex = this.selectcache[this.selectArr.length] ? this.selectcache[this.selectArr.length] : 0;
+            this.fleeIndex = fieldIndex;
+            console.log(this.fleeIndex);
             this.selectArr.push(fieldIndex);
             var html = "",
-                len = -fieldIndex * PickerView.defaultOpt.itemHeight,
                 item_html = this.getItemTpl(keys);
+
 
             html += '<div index="' + (this.selectArr.length - 1) + '" class="ns-pickerView-box__content">' +
                 '<div style="background-size:100% ' + this.padding + 'px;" class="content-mask"></div>' +
                 '<div style="top:' + this.padding + 'px;" class="content-indicator"></div>' +
-                '<div style="padding:' + this.padding + 'px 0;transform:translate3d(0,' + len + 'px,0)" fieldIndex="0" class="content-items">' +
+                '<div style="padding:' + this.padding + 'px 0;transform:translate3d(0,' + this.fleeIndex + 'px,0)" fieldIndex="0" class="content-items">' +
                 item_html +
                 '</div>' +
                 '</div>';
@@ -137,7 +139,7 @@
             var _this = this,
                 html = "",
                 arr = obj,
-                isObj = util.isObj(obj);
+                isObj = util.isObject(obj);
 
             if (isObj) arr = Object.keys(obj);
             html += this.getItemsTpl(arr);
@@ -149,9 +151,9 @@
         getTpl: function () {
             var html = '<div class="ns-pickerView-mask"></div><div class="ns-pickerView-box">' +
                 '<div class="ns-pickerView-box__header">' +
-                '<div class="ns-pickerView-box__header-btn left">取消</div>' +
+                '<div class="ns-pickerView-box__header-btn left">' + this.Opt.leftText + '</div>' +
                 '<div class="ns-pickerView-box__header-title">' + this.Opt.title + '</div>' +
-                '<div class="ns-pickerView-box__header-btn right">确定</div>' +
+                '<div class="ns-pickerView-box__header-btn right">' + this.Opt.rightText + '</div>' +
                 '</div>' +
                 '<div class="ns-pickerView-box__content-wrap">';
 
@@ -229,7 +231,7 @@
             var len = parseFloat(this._y_move) - parseFloat(this._y_start) + parseFloat(this.top_start);
             util.css(_this.moveObj, {
                 "transform": 'translate3d(0,' + len + 'px,0)'
-            })
+            });
             this.top_end = len;
         },
         touchend: function (e) {
@@ -250,12 +252,12 @@
                 len = -(this.moveObj.children.length - 1) * itemHeight;
                 fieldIndex = this.moveObj.children.length - 1;
             }
-            ;
+
 
             this.selectArr[index] = fieldIndex;
             this.moveObj.setAttribute("fieldIndex", fieldIndex);
 
-            this.moveObj.style.transition = "0.3s cubic-bezier(0,0,0.2,1.15)";
+            this.moveObj.style.transition = this.Opt.pickTouchSpeed + " cubic-bezier(0,0,0.2,1.15)";
             util.css(_this.moveObj, {
                 "transform": 'translate3d(0,' + len + 'px,0)'
             });
@@ -280,7 +282,7 @@
                         "transform": 'translate3d(0,0,0)'
                     });
                     this.selectArr[i] = 0;
-                    arr = util.isObj(data) ? Object.keys(data) : data;
+                    arr = util.isObject(data) ? Object.keys(data) : data;
                     elem_items.innerHTML = this.getItemTpl(arr);
                     var field = arr[0];
                     data = data[field];
@@ -294,8 +296,7 @@
             var body = document.getElementsByTagName("body")[0];
             body.removeChild(this.elem_wrap);
         }
-    }
-
+    };
 
     window.PickerView = PickerView;
 
