@@ -11,48 +11,59 @@ var gulpSass = require('gulp-sass');
 var csso = require('gulp-csso');
 var postcss = require('gulp-postcss');
 
-const utils = require('./build/utils.js');
-
-var _base_path = './src/';
-var _base_dist_path = './lib/';
+const utils = require('./build/utils.js');//unit fn
 
 
+var $base_path = './packages/';//src path
+var $base_dist_path = './lib/';//dist path
+
+var $base_path__js = (folder) => $base_path + folder + '/src/**/*.js';//src js path
+var $base_path__css = (folder) => $base_path + folder + '/src/style/index.scss';//src css path
+
+
+//task fo js handle
 gulp.task('js-handle', function () {
-    gulp.src(_base_path + '**/*.js')
-        .pipe(babel())
-        .pipe(uglify({
-            mangle: true,
-            compress: true
-        }))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(_base_dist_path))
-        .on('error', function (err) {
-            gutil.log(gutil.colors.red('[Error]'), err.toString());
-        })
-        .pipe(notify({message: '===== babel and uglify task complete ====='}));
+    var folders = utils.getFolders($base_path);
+    return folders.map(function (folder) {
+        gulp.src($base_path__js(folder))
+            .pipe(babel())
+            .pipe(uglify({
+                mangle: true,
+                compress: true
+            }))
+            .pipe(rename({suffix: '.min'}))
+            .pipe(gulp.dest($base_dist_path + folder))
+            .on('error', function (err) {
+                gutil.log(gutil.colors.red('[Error]'), err.toString());
+            })
+            .pipe(notify({message: '===== babel and uglify task complete ====='}));
+    });
 });
 
 // compile component css
-gulp.task('compile-scss', () => (
-    gulp
-        .src([path.resolve(_base_path + 'style/**/*.scss')])
-        .pipe(gulpSass({
-            paths: [path.resolve(__dirname, 'node_modules')]
-        }))
-        .pipe(postcss())
-        .pipe(csso())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(_base_dist_path))
-));
+gulp.task('compile-scss', function () {
+    var folders = utils.getFolders($base_path);
+    return folders.map(function (folder) {
+        gulp.src([path.resolve($base_path__css(folder))])
+            .pipe(gulpSass({
+                paths: [path.resolve(__dirname, 'node_modules')]
+            }))
+            .pipe(postcss())
+            .pipe(csso())
+            .pipe(rename({basename: folder, suffix: '.min'}))
+            .pipe(gulp.dest($base_dist_path + folder))
+    });
+});
 
 gulp.task('watch', () => {
-    gulp.watch(_base_path + '**/*.js', ['js-handle']).on('change', function (event) {
+    gulp.watch($base_path + '**/*.js', ['js-handle']).on('change', function (event) {
         console.log('File ' + event.path + ' was ' + event.type + utils.showinfo() + '')
     });
-    gulp.watch(_base_path + '**/*.scss', ['compile-scss']).on('change', function (event) {
+    gulp.watch($base_path + '**/*.scss', ['compile-scss']).on('change', function (event) {
         console.log('File ' + event.path + ' was ' + event.type + utils.showinfo() + '')
     });
 });
 
+//all run
 gulp.task('default', ['js-handle', 'compile-scss', 'watch']);
 
