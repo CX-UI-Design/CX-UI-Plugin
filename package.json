@@ -1,16 +1,16 @@
 {
   "name": "cx-ui-plugin",
   "version": "1.0.0",
-  "description": "CX-UI-Plugin",
+  "description": "plugin for project",
   "main": "gulpfile.js",
+  "author": "Broccoli spring( gcx )",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CX-UI-Design/CX-UI-Plugin.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/CX-UI-Design/CX-UI-Plugin/issues"
