@@ -112,7 +112,8 @@
         getItemTpl: function (keys) {
             var item_html = "";
             for (var i = 0; i < keys.length; i++) {
-                item_html += '<div class="content-item" style="fornt-size:' + (16 - i / 2) + 'px;">' + keys[i] + '</div>';
+                // style="fornt-size:' + 16 + 'px;"
+                item_html += '<div class="content-item">' + keys[i] + '</div>';
             }
             return item_html;
         },
@@ -210,7 +211,7 @@
 
                     selectArr.push(field);
                 }
-                _this.Opt.rightFn(selectArr);
+                _this.Opt.rightBtnFn(selectArr);
                 _this.closeComponent();
                 // 绑定元素
                 _this.Opt.bindElem.setAttribute("selectcache", _this.selectArr);
